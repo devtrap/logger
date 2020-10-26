@@ -7,8 +7,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/devtrap/logger/model"
-
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
@@ -135,10 +133,10 @@ func (lg *ApplicationLog) AddDevelopementInfo() {
 }
 
 // AddDatabaseConnectionPoolInfo reflects info about databaase connection
-func (lg *ApplicationLog) AddDatabaseConnectionPoolInfo(db *model.DBFunc) *ApplicationLog {
-	lg.AddOne("database", db.GetSqlConnection().Stats())
-	return lg
-}
+// func (lg *ApplicationLog) AddDatabaseConnectionPoolInfo(db *model.DBFunc) *ApplicationLog {
+// 	lg.AddOne("database", db.GetSqlConnection().Stats())
+// 	return lg
+// }
 
 // AddHTTPRequestInfo adds details about http
 func (lg *ApplicationLog) AddHTTPRequestInfo(c *gin.Context) *ApplicationLog {
